@@ -1,16 +1,16 @@
-// const express = require('express')
-// const app = express()
-// const port = 3000
+const express = require('express')
+const app = express()
+const port = 3000
 
-// const fs=require("fs");
-// app.use(express.json());
+const fs=require("fs");
+app.use(express.json());
 
-// const data=fs.readFileSync("./users.json","utf8");
-// const users=JSON.parse(data);
+const data=fs.readFileSync("./users.json","utf8");
+const users=JSON.parse(data);
 
-// app.get('/', (req, res) => {
-//     res.send("Hello World!");
-// });
+app.get('/', (req, res) => {
+    res.send("Hello World!");
+});
 
 
 
@@ -97,25 +97,7 @@ app.delete("/users/delete/:id", (req, res) => {
   res.send("success");
 });
 
-/*
 
-// app.get("/users/:id", (req, res) => {
-//     let id = req.params.id
-//     let user = users.find((el) => el.id === parseInt(id));
-//     res.send(user);
-//   });
-
-//   app.post("/addUser", (req,res) => {
-//     let name = req.body.name;
-//     let age = req.body.age;
-
-//     let newUser ={name,age};
-//     users.push(newUser);
-
-//     fs.writeFileSync("./users.json", JSON.stringify(users));
-//     res.send({success : true});
-//   });
-*/
  app.listen(port, () => {
      console.log(`Example app listening on port ${port}`)
  })
